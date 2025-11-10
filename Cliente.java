@@ -34,27 +34,27 @@ public class Cliente {
       System.out.println(LicenciaConduccion);
    }
 
-   public void setCedula() {
-
+   public void setCedula(String cedula) {
+      Cedula = cedula;
    }
 
-   public void setNombre() {
-
+   public void setNombre(String nombre) {
+      Nombre = nombre;
    }
 
-   public void setApellido() {
-
+   public void setApellido(String apellido) {
+      Apellido = apellido;
    }
 
-   public void setTelefono() {
-
+   public void setTelefono(String telefono) {
+      Telefono = telefono;
    }
 
-   public void setDireccion() {
-
+   public void setDireccion(String direccion) {
+      Direccion = direccion;
    }
 
-   public void setLicenciaConduccion() {
-
+   public void setLicenciaConduccion(String licenciaConduccion) {
+      LicenciaConduccion = licenciaConduccion;
    }
 }
