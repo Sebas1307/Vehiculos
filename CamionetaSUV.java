@@ -3,9 +3,9 @@ public class CamionetaSUV  extends Vehiculo{
     private float CapacidadMaletero;
     
     
-    public CamionetaSUV(String placa, String marca, int modelo, float precioDiario, String extado, String traccion,
+    public CamionetaSUV(String placa, String marca, int modelo, float precioDiario, String estado, String traccion,
             float capacidadMaletero) {
-        super(placa, marca, modelo, precioDiario, extado);
+        super(placa, marca, modelo, precioDiario, estado);
         Traccion = traccion;
         CapacidadMaletero = capacidadMaletero;
     }
