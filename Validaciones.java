@@ -3,21 +3,22 @@ import java.util.Scanner;
 public class Validaciones {
    Scanner sc = new Scanner(System.in);
 
-//// VALIDACIONES STRING/////
+   //// VALIDACIONES STRING/////
 
-// Validar placa
-   public String Validarplaca (Scanner sc) {
+   // Validar placa
+   public String Validarplaca(Scanner sc) {
       String placa = sc.nextLine();
       while (!placa.matches("^[A-Za-z]{3}[0-9]{3}$")) {
          System.out.println("Recuerde que una placa de vehiculo tiene 3 letra y 3 numeros en ese respectivo orden.");
-         System.out.println("Placa invalida. Ingrese una placa valida, (no se admiten caracteres especiales ni espacios): ");
+         System.out.println(
+               "Placa invalida. Ingrese una placa valida, (no se admiten caracteres especiales ni espacios): ");
          placa = sc.nextLine();
       }
       return placa;
    }
 
    // Validar marca
-   public String ValidarMarca (Scanner sc) {
+   public String ValidarMarca(Scanner sc) {
       String marca = sc.nextLine();
       while (!marca.matches("^[A-Za-z\\s]+$")) {
          System.out.println("Marca invalida. Ingrese una marca valida, (no se admiten numeros ni simbolos): ");
@@ -26,9 +27,9 @@ public class Validaciones {
       return marca;
    }
 
-   //Validar estado
-   public String ValidarEstado (Scanner sc) {
-      if (sc.hasNextLine()){
+   // Validar estado
+   public String ValidarEstado(Scanner sc) {
+      if (sc.hasNextLine()) {
          sc.nextLine();
       }
       String estado = sc.nextLine();
@@ -40,9 +41,8 @@ public class Validaciones {
       return estado;
    }
 
-
-   //Validar tipocombustible
-   public String ValidarTipoCombustible (Scanner sc) {
+   // Validar tipocombustible
+   public String ValidarTipoCombustible(Scanner sc) {
       String combustible = sc.nextLine();
       while (!combustible.matches("^(?i)(Gasolina|Diesel|Electrico)$")) {
          System.out.println("No se admiten numeros, caracteres especiales o espacios.");
@@ -52,19 +52,19 @@ public class Validaciones {
       return combustible;
    }
 
-   //validar transmicion
-      public String ValidarTransmicion (Scanner sc) {
-      String transmicion = sc.nextLine();
-      while (!transmicion.matches("^(?i)(Automatico|Manual)$")) {
+   // validar transmicion
+   public String ValidarTransmision(Scanner sc) {
+      String transmision = sc.nextLine();
+      while (!transmision.matches("^(?i)(Automatico|Manual)$")) {
          System.out.println("No se admiten numeros, caracteres especiales o espacios.");
          System.out.println("Ingrese alguna de las opciones permitidas (Automatico o Manual): ");
-         transmicion = sc.nextLine();
+         transmision = sc.nextLine();
       }
-      return transmicion;
+      return transmision;
    }
 
-   //validar traccion
-   public String ValidarTraccion (Scanner sc) {
+   // validar traccion
+   public String ValidarTraccion(Scanner sc) {
       String traccion = sc.nextLine();
       while (!traccion.matches("^(?i)(4x2|4x4)$")) {
          System.out.println("No se admiten caracteres especiales o espacios.");
@@ -73,24 +73,22 @@ public class Validaciones {
       }
       return traccion;
    }
-//// VALIDACIONES STRING/////
+   //// VALIDACIONES STRING/////
 
-//// VALIDACIONES INTEGER/////
-   
-   //Validar modelo
-   public Integer ValidarModelo (Scanner sc) {
+   //// VALIDACIONES INTEGER/////
+
+   // Validar modelo
+   public Integer ValidarModelo(Scanner sc) {
       int modelo;
-      while(true) {
-         if(sc.hasNextInt()) {
-            modelo =sc.nextInt();
+      while (true) {
+         if (sc.hasNextInt()) {
+            modelo = sc.nextInt();
             if (modelo > 1980 && modelo <= 2027) {
                break;
-            }
-            else{
+            } else {
                System.out.println("Ingrese un modelo valido 1980 - 2027");
             }
-         }
-         else{
+         } else {
             System.out.println("Ingrese un dato numerico entero: ");
             sc.next();
          }
@@ -98,9 +96,8 @@ public class Validaciones {
       return modelo;
    }
 
-
-   //validarentero
-   public int ValidarEntero (Scanner sc) {
+   // validarentero
+   public int ValidarEntero(Scanner sc) {
       int entero;
       while (!sc.hasNextInt()) {
          System.out.println("Ingrese un dato numerico entero: ");
@@ -110,12 +107,12 @@ public class Validaciones {
       return entero;
    }
 
-//// VALIDACIONES INTEGER/////
+   //// VALIDACIONES INTEGER/////
 
-//// VALIDACIONES FLOAT/////
+   //// VALIDACIONES FLOAT/////
 
-   //Validar floats
-   public Float Validarfloats (Scanner sc) {
+   // Validar floats
+   public Float Validarfloats(Scanner sc) {
       float decimal;
       while (true) {
          if (sc.hasNextFloat()) {
@@ -123,12 +120,10 @@ public class Validaciones {
 
             if (decimal > 0) {
                break;
-            }
-            else {
+            } else {
                System.out.println("No puedes ingresar un valor igual a 0 o negativo.");
             }
-         }
-         else {
+         } else {
             System.out.println("Ingrese un dato numerico decimal: ");
             sc.next();
          }
@@ -136,5 +131,5 @@ public class Validaciones {
       return decimal;
    }
 
-//// VALIDACIONES FLOAT/////
-   }
+   //// VALIDACIONES FLOAT/////
+}

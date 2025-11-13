@@ -3,46 +3,43 @@ import java.util.LinkedList;
 
 
 public class Main {
-public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    int opcion = 0;
-    LinkedList<CarroSedan> listaSedan = new LinkedList<>();
-    LinkedList<CamionetaSUV> listaSUV = new LinkedList<>();
-    Metodos m = new Metodos();
-	Validaciones v = new Validaciones();
-    boolean salir = true;
-    while (salir) {
-        System.out.println("----- Menu de Vehiculos -----");
-        System.out.println("1. Registrar Carro Sedan");
-        System.out.println("2. Mostrar Carros Sedan");
-        System.out.println("3. Registrar Camioneta SUV");
-        System.out.println("4. Mostrar Camionetas SUV");
-        System.out.println("5. Salir");
-        System.out.print("Seleccione una opcion: ");
-        opcion = v.ValidarEntero(sc);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int opcion = 0;
+        boolean salir = true;
+        LinkedList<Vehiculo> Vehiculos = new LinkedList<>();
+        Metodos m = new Metodos();
+        Validaciones v = new Validaciones();
+        while (salir) {
+            System.out.println("----- SISTEMA DE RENTING PARA VEHICULOS -----");
+            System.out.println("1. GESTIÓN DE CLIENTES");
+            System.out.println("2. GESTIÓN DE VEHÍCULOS");
+            System.out.println("3. GESTIÓN DE CONTRATOS DE RENTING");
+            System.out.println("4. IMPRIMIR INFORME GENERAL");
+            System.out.println("5. SALIR DEL SISTEMA");
+            System.out.println("Seleccione una opción: ");
+            opcion = v.ValidarEntero(sc);
 
-        switch (opcion) {
-            case 1:
-                CarroSedan sedan = new CarroSedan("","",0,0,"","","");
-                listaSedan.add(m.RegistrarSedan(sedan));
-                break;
-            case 2:
-                m.MostrarSedan(listaSedan);
-                break;
-            case 3:
-                CamionetaSUV suv = new CamionetaSUV("","",0,0,"","",0);
-                listaSUV.add(m.RegistrarSUV(suv));
-                break;
-            case 4:
-                m.MostrarSUV(listaSUV);
-                break;
-            case 5:
-                salir = false;
-                System.out.println("Saliendo del programa...");
-                break;
-            default:
-                System.out.println("Opcion invalida. Por favor, intente de nuevo.");
+            switch (opcion) {
+                case 1:
+                    // gestión de clientes
+                    break;
+                case 2:
+                    m.MenuGestionVehiculos(sc, Vehiculos, m, v);
+                    break;
+                case 3:
+                    // gestión de contratos
+                    break; 
+                case 4:
+                // informe general
+                    break;
+                case 5:
+                    System.out.println("Saliendo del sistema...");
+                    salir = false;
+                    break;
+                default:
+                    System.out.println("Opción inválida. Por favor, intente de nuevo.");
+        }
         }
     }
-	}
 }
